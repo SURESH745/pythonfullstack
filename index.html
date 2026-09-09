@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskFlow — Small Web App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Small Web Application</p>
+        <h1>TaskFlow</h1>
+        <p class="subtitle">A simple task manager built with HTML, CSS and JavaScript.</p>
+      </div>
+      <div class="stats" aria-label="Task statistics">
+        <div><strong id="total">0</strong><span>Total</span></div>
+        <div><strong id="completed">0</strong><span>Done</span></div>
+      </div>
+    </header>
+
+    <section class="panel" aria-label="Add task">
+      <form id="taskForm">
+        <input id="taskInput" type="text" placeholder="What needs to be done?" maxlength="80" required />
+        <button type="submit">Add Task</button>
+      </form>
+    </section>
+
+    <section class="toolbar">
+      <label for="filter">Show</label>
+      <select id="filter">
+        <option value="all">All tasks</option>
+        <option value="active">Active</option>
+        <option value="completed">Completed</option>
+      </select>
+      <button id="clearCompleted" class="secondary" type="button">Clear completed</button>
+    </section>
+
+    <section class="panel">
+      <ul id="taskList" class="tasks" aria-live="polite"></ul>
+      <p id="emptyState" class="empty">No tasks yet. Add your first task above.</p>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
